@@ -1,0 +1,9 @@
+# PythonBridge basic config
+# Simple kid-friendly settings.
+# python-path: leave blank to use system 'python'
+# script: relative path from server root
+
+enabled: true
+python-path: ""
+script: "plugins/python/bridge/bridge_runner.py"
+restart-on-crash: true

@@ -1,0 +1,6 @@
+{
+  "name": "ExamplePythonPlugin",
+  "version": "0.1.0",
+  "description": "A simple example Python plugin structure.",
+  "main": "main.py"
+}

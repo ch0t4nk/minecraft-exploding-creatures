@@ -1,0 +1,64 @@
+# Python virtual environments
+.venv/
+venv/
+
+# Java / Maven target directories
+**/target/
+
+# IntelliJ / Eclipse / VSCode metadata except settings you commit
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# Logs
+logs/
+server/logs/
+*.log
+
+# Minecraft server runtime data (worlds, caches, jars, player data)
+server/world/
+server/world_nether/
+server/world_the_end/
+server/cache/
+server/libraries/
+server/versions/
+server/logs/
+server/paper.jar
+server/plugins/*.jar
+server/paper-download.txt
+server/usercache.json
+server/whitelist.json
+server/ops.json
+server/banned-ips.json
+server/banned-players.json
+server/permissions.yml
+server/version_history.json
+server/commands.yml
+server/bukkit.yml
+server/spigot.yml
+server/server.properties
+server/eula.txt
+
+# Paper remapped cache
+server/plugins/.paper-remapped/
+
+# Config backups or local overrides
+config/java_path.txt
+
+# Python build artifacts
+__pycache__/
+*.pyc
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+
+# Coverage / test
+.coverage
+htmlcov/
+
+# Temporary
+*.tmp
+*.swp

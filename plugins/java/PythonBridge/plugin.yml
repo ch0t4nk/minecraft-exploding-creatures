@@ -1,0 +1,6 @@
+name: PythonBridge
+main: com.example.pythonbridge.PythonBridge
+version: 0.1.0
+author: You
+api-version: "1.21"
+description: Simple bridge plugin placeholder for Python integration.

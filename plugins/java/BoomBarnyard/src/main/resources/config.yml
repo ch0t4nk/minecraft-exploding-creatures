@@ -1,0 +1,83 @@
+# BoomBarnyard configuration
+# Default explosion power: similar to creeper (3). TNT is 4.
+explosion-power: 3.0
+# Maximum allowed explosion power clamp (safety). Prevents accidental huge values.
+max-explosion-power: 6.0
+# Per-entity override powers (use entity type names)
+per-entity-powers:
+  PIG: 3.5
+  CHICKEN: 2.0
+  COW: 3.0
+  SHEEP: 2.8
+# Should the explosion break blocks?
+break-blocks: false
+# Should the explosion create fire?
+fire: false
+# Entities that should explode on death.
+enabled-entities:
+  - PIG
+  - CHICKEN
+  - COW
+  - SHEEP
+# Pre-boom effect settings
+pre-boom:
+  enabled: true
+  ticks-before-boom: 20   # 20 ticks = 1 second
+  sound: ENTITY_CREEPER_PRIMED
+  particle: EXPLOSION_NORMAL
+  warning-message: '&cThe animal is about to explode!'
+
+# Nuclear (rare mega blast) settings
+nuclear:
+  enabled: true
+  # Chance (0.0-1.0) that a newly spawned enabled entity becomes NUCLEAR.
+  chance: 0.08
+  # Explosion power (NOT clamped by max-explosion-power). Keep modest! TNT=4, 20 is big.
+  power: 20.0
+  # Damage mode: reduce players within radius to 1 HP (true) else just explode.
+  reduce-to-one-hp: true
+  # Radius for applying 1 HP + launch effects.
+  effect-radius: 25.0
+  # Launch vertical velocity added to players.
+  launch-vertical: 2.5
+  # Horizontal multiplier relative to vector from blast center.
+  launch-horizontal: 1.2
+  # Ticks of fall damage immunity after launch.
+  fall-immunity-ticks: 200
+  # Glow color not configurable per-entity (Minecraft limitation); simply glows.
+  glow: true
+  # Message sent to affected players.
+  message: '&6NUCLEAR BARNYARD DETONATION! You barely survived!'
+  # Spawn particle cloud count (visual flair)
+  particles: 400
+  # Sound to play when nuclear entity is tagged (on spawn)
+  tag-sound: ENTITY_WITHER_SPAWN
+  # Sound to play at detonation
+  detonate-sound: ENTITY_ENDER_DRAGON_GROWL
+  # Countdown (boss bar) before nuclear detonation instead of instant.
+  countdown:
+    enabled: true
+    seconds: 5
+    color: RED        # BAR color
+    style: SEGMENTED_10  # SOLID, SEGMENTED_6, SEGMENTED_10, etc.
+    title: '&cNUCLEAR DETONATION IN {s}...'
+    sound-each-tick: BLOCK_NOTE_BLOCK_HAT
+    final-sound: ENTITY_ENDER_DRAGON_GROWL
+  # Visual glow / aura customization
+  glow-team-color: YELLOW   # One of: BLACK, DARK_BLUE, DARK_GREEN, DARK_AQUA, DARK_RED, DARK_PURPLE, GOLD, GRAY, DARK_GRAY, BLUE, GREEN, AQUA, RED, LIGHT_PURPLE, YELLOW, WHITE
+  aura:
+    enabled: true
+    particle: GLOW   # Good options: GLOW, END_ROD, SPELL_WITCH, CRIT_MAGIC
+    interval-ticks: 10
+    count: 12
+    radius: 0.6
+    extra: 0.01
+
+# Self-test trigger (opt-in): Create an empty file named 'run-self-test' inside
+# the plugin data folder (plugins/BoomBarnyard/run-self-test) before starting
+# the server to have the plugin spawn and kill a test entity once on enable.
+self-test:
+  enabled: false
+  always-run: false
+  entity: PIG
+  delay-after-enable-ticks: 40

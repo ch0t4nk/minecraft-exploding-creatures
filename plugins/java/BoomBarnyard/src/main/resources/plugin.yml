@@ -1,0 +1,29 @@
+name: BoomBarnyard
+main: com.example.boombarnyard.BoomBarnyardPlugin
+version: 0.1.2
+api-version: '1.21'
+authors: ["YourName"]
+description: Makes pigs and chickens explode like creepers when they die.
+website: https://example.com/
+commands:
+  boombarnyardreload:
+    description: Reload BoomBarnyard settings.
+    usage: /boombarnyardreload
+    permission: boombarnyard.reload
+  boombarnyard:
+    description: BoomBarnyard utilities (reload | test <ENTITY> | nukeall [ENTITY|ALL])
+    usage: "/boombarnyard reload | /boombarnyard test <ENTITY> | /boombarnyard nukeall [ENTITY|ALL]"
+    permission: boombarnyard.use
+permissions:
+  boombarnyard.reload:
+    description: Allows reloading the BoomBarnyard config.
+    default: op
+  boombarnyard.test:
+    description: Allows spawning a test entity and triggering an explosion.
+    default: op
+  boombarnyard.use:
+    description: Base permission for /boombarnyard command (still requires specific sub-permissions).
+    default: op
+  boombarnyard.nukeall:
+    description: Allows converting all currently spawned configured animals into nuclear variants.
+    default: op

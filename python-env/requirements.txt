@@ -1,0 +1,4 @@
+# Global Python environment packages for all plugins
+# Keep versions pinned when possible.
+# Example common libs:
+# requests==2.32.3
